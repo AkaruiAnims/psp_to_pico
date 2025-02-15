@@ -1,0 +1,5 @@
+/home/akarui/Documents/Github/psp_to_pico/pico/build/pioasm-install/pioasm/pioasm
+/home/akarui/Documents/Github/psp_to_pico/pico/build/pioasm-install/pioasm/pioasmTargets.cmake
+/home/akarui/Documents/Github/psp_to_pico/pico/build/pioasm-install/pioasm/pioasmTargets-release.cmake
+/home/akarui/Documents/Github/psp_to_pico/pico/build/pioasm-install/pioasm/pioasmConfig.cmake
+/home/akarui/Documents/Github/psp_to_pico/pico/build/pioasm-install/pioasm/pioasmConfigVersion.cmake
