@@ -1,1 +1,4 @@
 build/*
+pico/build
+flake.lock
+flake.nix

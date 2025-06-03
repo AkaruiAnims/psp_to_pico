@@ -1,7 +1,0 @@
-/home/akarui/Documents/Github/psp_to_pico/pico/build/pioasm/CMakeFiles/pioasm.dir
-/home/akarui/Documents/Github/psp_to_pico/pico/build/pioasm/CMakeFiles/edit_cache.dir
-/home/akarui/Documents/Github/psp_to_pico/pico/build/pioasm/CMakeFiles/rebuild_cache.dir
-/home/akarui/Documents/Github/psp_to_pico/pico/build/pioasm/CMakeFiles/list_install_components.dir
-/home/akarui/Documents/Github/psp_to_pico/pico/build/pioasm/CMakeFiles/install.dir
-/home/akarui/Documents/Github/psp_to_pico/pico/build/pioasm/CMakeFiles/install/local.dir
-/home/akarui/Documents/Github/psp_to_pico/pico/build/pioasm/CMakeFiles/install/strip.dir
