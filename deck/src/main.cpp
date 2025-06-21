@@ -1,5 +1,3 @@
-// IP: 192.168.2.4
-
 #include <iostream>
 #include <cstring>
 #include <unistd.h>
@@ -8,7 +6,7 @@
 
 int main()
 {
-    const char *pico_ip = "192.168.2.4"; // 🛠️ Replace with your Pico W IP
+    const char *pico_ip = "0.0.0.0"; // 🛠️ Replace with your Pico W IP
     const int pico_port = 1234;
 
     // Create socket
