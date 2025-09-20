@@ -1,51 +1,20 @@
-# cmake_minimum_required(VERSION 3.10)
-# project(main_nx)
-#
-# # 1. Force Switch toolchain (absolute path)
-# set(CMAKE_TOOLCHAIN_FILE "/opt/devkitpro/cmake/switch.cmake")
-#
-# # 2. Basic project setup
-# set(APP_NAME "main_nx")
-# add_executable(${APP_NAME} src/main.cpp)
-#
-# # 3. Critical Switch-specific settings
-# target_include_directories(${APP_NAME} PRIVATE
-#     /opt/devkitpro/libnx/include
-#     /opt/devkitpro/portlibs/switch/include
-# )
-#
-# target_link_directories(${APP_NAME} PRIVATE
-#     /opt/devkitpro/portlibs/switch/lib
-# )
-#
-# target_link_libraries(${APP_NAME} PRIVATE nx)
-#
-# # 4. NRO conversion
-# find_program(ELF2NRO elf2nro)
-# if(ELF2NRO)
-#     add_custom_command(TARGET ${APP_NAME} POST_BUILD
-#         COMMAND ${ELF2NRO} $<TARGET_FILE:${APP_NAME}> ${APP_NAME}.nro
-#         COMMENT "Building NRO"
-#     )
-# endif()
-#
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.13)
 project(main_nx)
 
-# ABSOLUTE PATH - NO VARIABLES
-set(CMAKE_TOOLCHAIN_FILE "/opt/devkitpro/cmake/switch.cmake")
+# Enable C++17 (or whatever you prefer)
+set(CMAKE_CXX_STANDARD 17)
 
-# Critical compiler flags
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -I/opt/devkitpro/devkitA64/aarch64-none-elf/include")
+# Find your source files
+set(SOURCES src/main.cpp)
 
-# Simple executable
-add_executable(main_nx src/main.cpp)
+# Create the executable
+add_executable(main_nx ${SOURCES})
 
-# Required include paths
-target_include_directories(main_nx PRIVATE
-    /opt/devkitpro/libnx/include
-    /opt/devkitpro/devkitA64/aarch64-none-elf/include
-    /opt/devkitpro/devkitA64/lib/gcc/aarch64-none-elf/*/include
+# Link against libnx
+target_link_libraries(main_nx nx)
+
+# Add a post-build command to generate the .nro automatically
+add_custom_command(TARGET main_nx POST_BUILD
+    COMMAND ${DEVKITPRO}/tools/bin/elf2nro $<TARGET_FILE:main_nx> ${CMAKE_CURRENT_BINARY_DIR}/main_nx.nro
+    COMMENT "Generating main_nx.nro from main_nx.elf"
 )
-
-target_link_libraries(main_nx PRIVATE nx)

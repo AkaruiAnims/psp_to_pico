@@ -63,7 +63,7 @@ int main(int argc, char **argv) {
     }
 
     // Proper socket cleanup
-    closesocket(sock);  // Use closesocket() instead of close()
+    close(sock);  // Use closesocket() instead of close()
     socketExit();
     consoleExit(NULL);
     return 0;
